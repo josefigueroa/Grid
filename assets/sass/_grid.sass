@@ -1,0 +1,46 @@
+/*Columnas*/
+@for $i from 1 through 12
+  .#{$col}#{$i}
+    width: (8.333333 * $i) * 1%
+    
+/*Pull*/
+@for $c from 1 through 11
+  .#{$pull}-#{$c}
+    margin-left: (8.333333 * $c)  * 1%
+
+/*Push*/
+@for $c from 1 through 11
+  .#{$push}-#{$c}
+    margin-right: (8.333333 * $c)  * 1%
+
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+.content
+	max-width: 1200px
+	margin: 0 auto
+	width: 100%
+
+[class^=col]
+	float: left
+	margin-bottom: 1rem
+	padding-left: .5rem
+	padding-right: .5rem
+	background: red
+	min-height: 40px
+	color: #fff
+	outline: #fff solid 1px
+	text-align: center
+	padding-top: 8px
+	font-weight: 700
+
+	&:first-child
+		padding-left: 0
+
+	&:last-child
+		padding-right: 0
+
+.row
+	clear: both

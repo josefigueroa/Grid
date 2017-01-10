@@ -1,0 +1,62 @@
+//Mixin de numero columnas
+=column($a)
+
+	@for $i from 1 through 12
+	  .#{$col}#{$i}#{$a}
+	    width: (8.333333 * $i) * 1%
+
+//Mixin empujar columnas a la derecha
+=pull($a)
+
+	@for $i from 1 through 11
+	  .#{$pull}-#{$i}#{$a}
+	    margin-left: (8.333333 * $i) * 1%
+
+//Mixin empujar columnas a la izquierda (¿¿??)
+=push($a)
+
+	@for $i from 1 through 11
+	  .#{$push}-#{$i}#{$a}
+	    margin-right: (8.333333 * $i) * 1%
+
+//Mixin flexbox
+=start($a)
+
+	.flexrow.start-#{$a}
+	  justify-content: flex-start
+
+
+=center($a)
+
+	.flexrow.center-#{$a}
+	  justify-content: center
+
+=end($a)
+
+	.flexrow.end-#{$a}
+	  justify-content: flex-end
+
+=around($a)
+
+	.flexrow.around-#{$a}
+	  justify-content: space-around
+
+=between($a)
+
+	.flexrow.between-#{$a}
+	  justify-content: space-between
+
+=vstart($a)
+
+	.flexrow.vstart-#{$a}
+	  align-items: flex-start
+
+=vcenter($a)
+
+	.flexrow.vcenter-#{$a}
+	  align-items: center
+
+=vend($a)
+
+	.flexrow.vend-#{$a}
+	  align-items: flex-end
