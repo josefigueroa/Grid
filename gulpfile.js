@@ -19,7 +19,7 @@ var src = {
    sass: 'assets/sass/**/*.sass'
 };
 
- 
+
 /*
 Concatenar JS y minimificar
 */

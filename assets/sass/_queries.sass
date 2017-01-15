@@ -1,5 +1,5 @@
 @media all and (min-width: 1024px)
-  
+
   +column(lg)
   +pull(lg)
   +push(lg)
@@ -13,7 +13,7 @@
   +vend(lg)
 
 @media all and (max-width: 1024px) and (min-width: 768px)
-	
+
   +column(l)
   +pull(l)
   +push(l)
@@ -38,10 +38,10 @@
   +between(m)
   +vstart(m)
   +vcenter(m)
-  +vend(m)  
-  
+  +vend(m)
+
 @media all and (max-width: 434px)
-	
+
   +column(s)
   +pull(s)
   +push(s)
@@ -52,10 +52,32 @@
   +between(s)
   +vstart(s)
   +vcenter(s)
-  +vend(s)  
+  +vend(s)
 
   .col1s
     width: 20px
 
   .col11sraro
     width: calc(100% - 20px )
+
+  //HEADER//
+  header
+      padding: 1em 0
+      .menu
+          .logo
+              width: 100%
+              display: flex
+              justify-content: space-between
+              .btn-menu
+                  display: block
+          .enlaces
+              display: block
+              position: fixed
+              width: 80%
+              height: 100vh
+              top: 0
+              left: 0
+              z-index: 2
+              background: #4357ad
+              transform: translateX(-100%)
+              transition: all 0.3s
