@@ -1,69 +1,10 @@
 init = function () {
     //headerFixed('#header');
-    header_hidden();
     dropdownMenu('.header__nav__menuHeader__listItem__enlace');
     slideMenu('#btn-menu');
     scrollToTop('.scrollTop');
     activeMenu('.header__nav__menuHeader__listItem');
     acordeon('.acordeon-title', '.acordeon-paragraph');
-},
-
-header_hidden = function () {
-    $(window).scroll(function () {
-        var beforeTop = 0,
-            currentTop = $(window).scrollTop();
-
-        if (currentTop < this.beforeTop) {
-            $("header").slideDown(300);
-        } else {
-            $("header").slideUp(300);
-        }
-        this.beforeTop = currentTop;
-    });
-
-
-
-
-
-
-
-    // var didScroll;
-    // var lastScrollTop = 0;
-    // var delta = 5;
-    // var navbarHeight = $('header').outerHeight();
-    //
-    // $(window).scroll(function(event){
-    //     didScroll = true;
-    // });
-    //
-    // setInterval(function() {
-    //     if (didScroll) {
-    //         hasScrolled();
-    //         didScroll = false;
-    //     }
-    // }, 250);
-    //
-    // function hasScrolled() {
-    //     var st = $(this).scrollTop();
-    //
-    //     // Make sure they scroll more than delta
-    //     if(Math.abs(lastScrollTop - st) <= delta)
-    //         return;
-    //
-    //     // If they scrolled down and are past the navbar, add class .nav-up.
-    //     // This is necessary so you never see what is "behind" the navbar.
-    //     if (st > lastScrollTop && st > navbarHeight){
-    //         // Scroll Down
-    //         $('header').removeClass('nav-down').addClass('nav-up');
-    //     } else {
-    //         // Scroll Up
-    //         if(st + $(window).height() < $(document).height()) {
-    //             $('header').removeClass('nav-up').addClass('nav-down');
-    //         }
-    //     }
-    //
-    //     lastScrollTop = st;
-    //     }
 },
 
 headerFixed = function (element) {

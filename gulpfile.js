@@ -16,18 +16,17 @@ var postcss_plugins = [
 
 var src = {
    html: './*.html',
-   sass: 'assets/sass/**/*.sass'
+   sass: 'assets/sass/**/*.sass',
+   js: 'assets/js/**/*.js'
 };
 
 
 /*
-Concatenar JS y minimificar
+Recarga el navegador en vivo y en directo (el HTML)
 */
-gulp.task('concatenar', function() {
-    gulp.src(['assets/js/**/*.js'])
-        .pipe(concat('functions.js'))
-        .pipe(uglify('function.min.js'))
-        .pipe(gulp.dest('js/'))
+gulp.task('html', function() {
+   gulp.src(src.html)
+       .pipe(livereload());
 });
 
 /*
@@ -43,12 +42,19 @@ gulp.task('styles', function() {
    .pipe(livereload());
 });
 
+
+
 /*
-Recarga el navegador en vivo y en directo (el HTML)
+Concatenar JS y minimificar
 */
-gulp.task('html', function() {
-   gulp.src(src.html)
-       .pipe(livereload());
+gulp.task('js', function() {
+    gulp.src(src.js)
+        .pipe(sourcemaps.init())
+        .pipe(concat('main.min.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('js/'))
+        .pipe(livereload());
 });
 
 
@@ -58,8 +64,10 @@ Watch
 
 gulp.task('watch', function () {
    livereload.listen();
-   gulp.watch(src.sass, ['styles']);
    gulp.watch(src.html, ['html']);
+   gulp.watch(src.sass, ['styles']);
+   gulp.watch(src.js, ['js']);
+
 });
 
-gulp.task('default', ['styles', 'html', 'watch']);
+gulp.task('default', ['html', 'styles', 'js', 'watch']);
