@@ -1,93 +1,127 @@
 @media all and (min-width: 1024px)
 
-  +column(lg)
-  +pull(lg)
-  +push(lg)
-  +start(lg)
-  +center(lg)
-  +end(lg)
-  +around(lg)
-  +between(lg)
-  +vstart(lg)
-  +vcenter(lg)
-  +vend(lg)
+    +column(lg)
+    +pull(lg)
+    +push(lg)
+    +start(lg)
+    +center(lg)
+    +end(lg)
+    +around(lg)
+    +between(lg)
+    +vstart(lg)
+    +vcenter(lg)
+    +vend(lg)
 
 @media all and (max-width: 1024px) and (min-width: 768px)
 
-  +column(l)
-  +pull(l)
-  +push(l)
-  +start(l)
-  +center(l)
-  +end(l)
-  +around(l)
-  +between(l)
-  +vstart(l)
-  +vcenter(l)
-  +vend(l)
+    +column(l)
+    +pull(l)
+    +push(l)
+    +start(l)
+    +center(l)
+    +end(l)
+    +around(l)
+    +between(l)
+    +vstart(l)
+    +vcenter(l)
+    +vend(l)
 
 @media all and (max-width: 767px) and (min-width: 435px)
 
-  +column(m)
-  +pull(m)
-  +push(m)
-  +start(m)
-  +center(m)
-  +end(m)
-  +around(m)
-  +between(m)
-  +vstart(m)
-  +vcenter(m)
-  +vend(m)
+    +column(m)
+    +pull(m)
+    +push(m)
+    +start(m)
+    +center(m)
+    +end(m)
+    +around(m)
+    +between(m)
+    +vstart(m)
+    +vcenter(m)
+    +vend(m)
+
+    //HEADER//
+    header
+        padding: 1em 0
+        .menu
+            .logo
+                width: 100%
+                display: flex
+                justify-content: space-between
+
+                .btn-menu
+                    display: block
+
+            .enlaces
+                display: block
+                position: fixed
+                width: 80%
+                height: 100vh
+                top: 0
+                left: 0
+                z-index: 2
+                background: #fff
+                transform: translateX(-100%)
+                transition: all 0.3s
+
+                li
+                    a
+                        color: rgba(0,0,0,0.87)
+
+                .active
+                        background: #ddd
 
 @media all and (max-width: 434px)
 
-  +column(s)
-  +pull(s)
-  +push(s)
-  +start(s)
-  +center(s)
-  +end(s)
-  +around(s)
-  +between(s)
-  +vstart(s)
-  +vcenter(s)
-  +vend(s)
+    +column(s)
+    +pull(s)
+    +push(s)
+    +start(s)
+    +center(s)
+    +end(s)
+    +around(s)
+    +between(s)
+    +vstart(s)
+    +vcenter(s)
+    +vend(s)
 
-  .col1s
-    width: 20px
+    .col1s
+        width: 20px
 
-  .col11sraro
-    width: calc(100% - 20px )
+    .col11sraro
+        width: calc(100% - 20px )
 
-  //HEADER//
-  header
-    padding: 1em 0
-    .menu
-        .logo
-            width: 100%
-            display: flex
-            justify-content: space-between
-            .btn-menu
+    //HEADER//
+    header
+        padding: 1em 0
+        .menu
+            .logo
+                width: 100%
+                display: flex
+                justify-content: space-between
+
+                .btn-menu
+                    display: block
+
+            .enlaces
                 display: block
-        .enlaces
-            display: block
-            position: fixed
-            width: 80%
-            height: 100vh
-            top: 0
-            left: 0
-            z-index: 2
-            background: #fff
-            transform: translateX(-100%)
-            transition: all 0.3s
+                position: fixed
+                width: 80%
+                height: 100vh
+                top: 0
+                left: 0
+                z-index: 2
+                background: #fff
+                transform: translateX(-100%)
+                transition: all 0.3s
 
-            li
-                a
-                    color: rgba(0,0,0,0.87)
+                li
+                    a
+                        color: rgba(0,0,0,0.87)
+                        font-size: 0.8em
 
+                    .fa-chevron-down
+                        font-size: 0.7em
 
-
-
-            .active
-                    background: #F3F3F3
+                .active
+                        background: #ddd
