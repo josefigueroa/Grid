@@ -1,25 +1,50 @@
 form_focus = function () {
-    $('input[type="text"]').on('focusin', function () {
-        $(this).siblings('label').addClass('label-top');
+
+    var input = $('input[type="text"]'),
+        placeholder = $(this).attr('placeholder');
+
+    //entra en cada input y comprueba si tiene algun valor o el placeholder
+    input.each(function() {
+        var input = $('input[type="text"]'),
+            placeholder = $(this).attr('placeholder');
+
+        if ($(this).val().length > 0 || placeholder !== undefined ) {
+            $(this).siblings('.label-label').addClass('floating-label');
+        }else{
+            $(this).siblings('.label-label').removeClass('floating-label');
+        }
     });
 
-    $('input[type="text"]').on('focusout', function () {
-        if ($(this).val().length > 0) {
-          $('input[type="text"]').siblings('label').addClass('label-top');
-        }
-        else {
-          $('input[type="text"]').siblings('label').removeClass('label-top');
+    input.on('change', function () {
+        if ($(this).val().length !== 0 || placeholder !==  undefined) {
+            $(this).siblings('.label-label').addClass('floating-label');
+        }else{
+            $(this).siblings('.label-label').removeClass('floating-label');
+
         }
     });
 
-    $('input[type="text"]').on('change', function () {
-        if ($(this).val().length > 0) {
-          $('input[type="text"]').siblings('label').addClass('label-top');
+    //cuando el input tiene el foco
+    input.on('focusin', function () {
+        if ($(this).val().length >= 0 || placeholder !==  undefined) {
+            $(this).siblings('.label-label').addClass('floating-label');
+        }else{
+            $(this).siblings('.label-label').removeClass('floating-label');
         }
-        else {
-          $('input[type="text"]').siblings('label').removeClass('label-top');
+        //$(this).siblings('.label-label').addClass('floating-label');
+    });
+
+    input.on('focusout', function () {
+        if ($(this).val().length !== 0 ) {
+            $(this).siblings('.label-label').addClass('floating-label');
+        }else if ($(this).attr('placeholder') !==  undefined) {
+            $(this).siblings('.label-label').addClass('floating-label');
+        }else {
+            $(this).siblings('.label-label').removeClass('floating-label');
         }
     });
+
+
 }
 
 form_focus();
