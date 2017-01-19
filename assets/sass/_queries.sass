@@ -62,22 +62,32 @@
 
   //HEADER//
   header
-      padding: 1em 0
-      .menu
-          .logo
-              width: 100%
-              display: flex
-              justify-content: space-between
-              .btn-menu
-                  display: block
-          .enlaces
-              display: block
-              position: fixed
-              width: 80%
-              height: 100vh
-              top: 0
-              left: 0
-              z-index: 2
-              background: #4357ad
-              transform: translateX(-100%)
-              transition: all 0.3s
+    padding: 1em 0
+    .menu
+        .logo
+            width: 100%
+            display: flex
+            justify-content: space-between
+            .btn-menu
+                display: block
+        .enlaces
+            display: block
+            position: fixed
+            width: 80%
+            height: 100vh
+            top: 0
+            left: 0
+            z-index: 2
+            background: #fff
+            transform: translateX(-100%)
+            transition: all 0.3s
+
+            li
+                a
+                    color: rgba(0,0,0,0.87)
+
+
+
+
+            .active
+                    background: #F3F3F3
