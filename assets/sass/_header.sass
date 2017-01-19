@@ -1,0 +1,57 @@
+header
+    background: #4357ad
+    // position: fixed
+    width: 100%
+    top: 0
+    margin-bottom: 25px
+    z-index: 1
+    position: fixed
+    top: 0
+
+    transition: top 0.2s ease-in-out
+
+    .menu
+        width: 90%
+        max-width: 1000px
+        margin: auto
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+
+        .logo
+            display: inline-block
+            margin-right: 1em
+            a
+                color: #fff
+            .btn-menu
+                display: none
+                color: #fff
+                text-decoration: none
+                font-size: 1em
+
+        .enlaces
+            display: flex
+            margin-bottom: 0
+            li
+                //display: inline-block
+                list-style: none
+                a
+                    display: block
+                    text-decoration: none
+                    color: #fff
+                    padding: 1em
+                    font-size: 1em
+
+                    i
+                        margin-right: 5px
+
+.header_fixed
+    position: fixed
+    margin-left: -5%
+    z-index: 1
+
+.open
+    transform: translateX(0%) !important
