@@ -35,7 +35,7 @@ header = function () {
                 $('.enlaces a').siblings('.dropdownMenu').hide();
             }
         });
-    },
+    }
 
     header_scroll();
     header_dropdown();
