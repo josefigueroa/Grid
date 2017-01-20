@@ -5,6 +5,8 @@ init = function () {
     scrollToTop('.scrollTop');
     activeMenu('.header__nav__menuHeader__listItem');
     acordeon('.acordeon-title', '.acordeon-paragraph');
+    llamadaAjax('.li-item');
+    pegamento('.contentfixed');
 },
 
 headerFixed = function (element) {
@@ -18,6 +20,19 @@ headerFixed = function (element) {
         }
     });
 },
+
+pegamento = function (element) {
+
+    $(window).scroll(function () {
+        var Top = $(window).scrollTop();
+
+        if (Top > 30) {
+            $(element).addClass('fixed');
+        } else {
+            $(element).removeClass('fixed');
+        }
+    })
+}
 
 dropdownMenu = function (elemnet) {
     var keydown = $('.header__nav__menuHeader__listItem__enlace');
@@ -94,6 +109,28 @@ acordeon = function (acordeon, acordeonHijo ) {
     });
 },
 
+
+//Llamada ajax para la guia de estilo
+llamadaAjax = function (element) {
+    $(element).on('click', function(e){
+        var url = $(this).data("href");
+
+        $.ajax({
+            url: url + '.html',
+            async: true,
+            dataType: 'html',
+            success: function(a){
+                $('.content_container').html(a);
+            },
+            error: function(a){
+                $('.content_container').html('<h4>Lo sentimos, se produjo un error</h4>');
+            }
+        });
+
+    });
+},
+
 $(document).ready(function() {
     init();
+  
 });

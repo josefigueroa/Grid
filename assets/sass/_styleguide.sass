@@ -1,0 +1,41 @@
+.contentStyleguide
+	padding-top: 55px
+
+.AccordeonNav
+	.acordeon
+		background-color: $color-secondary
+		border: 0
+
+		.acordeon-title
+			background-color: $color-secondary
+			color: $color-primary
+			font-size: 0.9rem
+			text-align: left
+
+		.containerUl
+
+			li
+				text-align: left
+				width: 100%
+				list-style: none
+				text-decoration: none
+				color: $grey
+				font-size: 0.8rem
+				cursor: pointer
+
+				&:hover	
+					text-decoration: underline
+
+.containerfixed
+	position: relative
+
+	.li-item-fixed
+		padding-left: 0.5rem
+
+		&.active
+			border-left: 2px solid $warning
+
+.fixed
+	position: fixed
+	top: 55px
+	bottom: auto
