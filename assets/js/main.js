@@ -22,7 +22,6 @@ headerFixed = function (element) {
 },
 
 pegamento = function (element) {
-
     $(window).scroll(function () {
         var Top = $(window).scrollTop();
 
@@ -32,7 +31,36 @@ pegamento = function (element) {
             $(element).removeClass('fixed');
         }
     })
-}
+},
+
+seguimiento = function (element, element_lista) {
+    $(element).on('scrollSpy:enter', function() {
+        var id = '#' + $(this).attr('id');
+
+        $(element_lista).each(function(){
+            var enlace = $(this).children('a'),
+                hash = enlace.attr('href');
+            if (id == hash) {
+                $(element_lista).removeClass('active');
+                $(this).addClass('active');
+            }
+        })
+    });
+
+    $(element).on('scrollSpy:exit', function() {
+        var id = '#' + $(this).attr('id');
+
+        $(element_lista).each(function(){
+            var enlace = $(this).children('a'),
+                hash = enlace.attr('href');
+            if (id == hash) {
+                $(this).removeClass('active');
+            }
+        })
+    });
+
+    $(element).scrollSpy();
+},
 
 dropdownMenu = function (elemnet) {
     var keydown = $('.header__nav__menuHeader__listItem__enlace');
