@@ -1,0 +1,72 @@
+<div class="row">
+	<div class="col9">
+		<div class="row">
+			<h1>Flexbox Grid</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, neque repellendus eveniet modi assumenda eaque, possimus totam sed aliquid, veniam ab. Repellendus saepe quo asperiores aliquam explicabo, odio necessitatibus dignissimos.</p>
+			<p>Ea aliquid laudantium enim tempore officia, doloribus dolores quia quam. Non dolorem aspernatur illum nemo, fugiat cum dignissimos, quidem rem cupiditate ducimus distinctio id similique asperiores nulla architecto velit tempore?</p>
+			<p>Neque obcaecati officia natus, deserunt, eum blanditiis in illo magni ex accusamus. Vel sint eligendi, distinctio modi eius temporibus possimus, voluptates aliquam, voluptatibus reprehenderit iure ex quo rem a nostrum!</p>
+			<p>Enim nostrum, officia consequatur distinctio quia veniam, reiciendis repellat odit aperiam aliquam ipsum corporis, nihil non laudantium, ducimus alias explicabo hic illum quisquam! Vero impedit distinctio maiores id, error aliquam.</p>	
+		</div>
+
+		<div class="row scrollspy" id="endstartcenter">
+			<h3>Clases end, start y center
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae adipisci numquam, repudiandae culpa, sunt nihil consequatur, natus distinctio quisquam unde autem fuga libero dolorem non placeat quos! Sit, fuga, illum.</p>
+			</h3>
+		</div>
+		<div class="col12s"><small>Vemos que en el primer ejemplo los dos estilos combinados, mientras que en sobremesa las cajas se alinean a la derecha, en m&oacute;vil pasan a la izquierda. El segundo es un ejemplo de alineamiento central</small></div>
+		<div class="row flexrow end start-s">
+			<div class="col5 col-color">col5</div>
+			<div class="col3 col-color">col3</div>
+		</div>
+		<div class="row flexrow center">
+			<div class="col5 col-color">col5</div>
+			<div class="col3 col-color">col3</div>
+		</div>
+
+		<div class="row scrollspy" id="aroundbetween">
+			<h3>Clases around y between (para direction en filas)
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae adipisci numquam, repudiandae culpa, sunt nihil consequatur, natus distinctio quisquam unde autem fuga libero dolorem non placeat quos! Sit, fuga, illum.</p>
+			</h3>
+		</div>
+		<div class="col12s"><small>Vemos que en el primer ejemplo los dos estilos combinados, mientras que en sobremesa las cajas se alinean a la derecha, en m&oacute;vil pasan a la izquierda. El segundo es un ejemplo de alineamiento central</small></div>
+		<div class="row flexrow around">
+			<div class="col5 col-color">col5</div>
+			<div class="col3 col-color">col3</div>
+		</div>
+		<div class="row flexrow between">
+			<div class="col5 col-color">col5</div>
+			<div class="col3 col-color">col3</div>
+		</div>
+
+		<div class="row scrollspy" id="vcentervstartvend">
+			<h3>Clases vcenter, vstart, vend (para direction vertical)
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae adipisci numquam, repudiandae culpa, sunt nihil consequatur, natus distinctio quisquam unde autem fuga libero dolorem non placeat quos! Sit, fuga, illum.</p>
+			</h3>
+		</div>
+		<div class="col12s"><small>Vemos que en el primer ejemplo los dos estilos combinados, mientras que en sobremesa las cajas se alinean a la derecha, en m&oacute;vil pasan a la izquierda. El segundo es un ejemplo de alineamiento central</small></div>
+		<div class="row flexrow vcenter">
+			<div class="col5 col-color" style="height:200px;">col5</div>
+			<div class="col3 col-color">col3</div>
+		</div>
+		<div class="row flexrow vend vstart-m vcenter-s">
+			<div class="col5 col-color" style="height:200px;">col5</div>
+			<div class="col3 col-color">col3</div>
+		</div>
+		<div class="row flexrow vstart">
+			<div class="col5 col3s col-color flexrow vcenter center" style="height:200px;">col5</div>
+			<div class="col3 col2s col-color">col3</div>
+		</div>
+	</div>
+	<div class="col3 containerfixed">
+		<ul class="contentfixed">
+			<li class="li-item-fixed"><a href="#endstartcenter">End, start, center</a></li>
+			<li class="li-item-fixed"><a href="#aroundbetween">Around, between</a></li>
+			<li class="li-item-fixed"><a href="#vcentervstartvend">Vcenter, vstart, vend</a></li>
+		</ul>
+	</div>
+</div>
+
+<script>
+	activeMenu('.li-item-fixed');
+	seguimiento('.scrollspy', '.li-item-fixed');
+</script>
