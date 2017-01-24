@@ -6,6 +6,7 @@ const gulp = require('gulp'),
      sass = require('gulp-sass'),
      livereload = require('gulp-livereload'),
      sourcemaps = require('gulp-sourcemaps'),
+     merge = require('merge-stream'),
      cssnext = require('postcss-cssnext'),
      concat = require('gulp-concat'),
   	 uglify = require('gulp-uglify');
@@ -16,6 +17,7 @@ var postcss_plugins = [
 
 var src = {
    html: './*.html',
+   assetsHtml: 'assets/pages/**/*.html',
    sass: 'assets/sass/**/*.sass',
    js: 'assets/js/**/*.js'
 };
@@ -25,8 +27,13 @@ var src = {
 Recarga el navegador en vivo y en directo (el HTML)
 */
 gulp.task('html', function() {
-   gulp.src(src.html)
-       .pipe(livereload());
+    var html = gulp.src(src.html)
+        .pipe(livereload());
+
+    var assets = gulp.src(src.assetsHtml)
+        .pipe(livereload());
+
+    return merge(html, assets);
 });
 
 /*
@@ -65,6 +72,7 @@ Watch
 gulp.task('watch', function () {
    livereload.listen();
    gulp.watch(src.html, ['html']);
+   gulp.watch(src.assetsHtml, ['html']);
    gulp.watch(src.sass, ['styles']);
    gulp.watch(src.js, ['js']);
 
