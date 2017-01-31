@@ -59,29 +59,6 @@ header = function () {
 
     },
 
-    // slideMenu = function (slideMenu, exit) {
-    //     //abrir menu izquierda icono menu
-    //     $(slideMenu).on('click', function(event){
-    //     	var slideoutMenu = $('.enlaces'),
-    //             body = $('body');
-    //
-    //     	slideoutMenu.toggleClass("open");
-    //
-    //         //body.append('<div class="overlay"></div>').css({'padding-left': '130px', 'transition': 'all 0.3s'});
-    //     });
-    //
-    //     //cerrar menu en la x
-    //     $(exit).on('click', function () {
-    //         var slideoutMenu = $('#btn-menu');
-    //
-    //     	slideoutMenu.removeClass("open");
-    //         $('body').css({'padding-left': '0', 'transition': 'all 0.3s'});
-    //
-    //         $('<div class="overlay"></div>').detach();
-    //
-    //     });
-    // },
-
     header_scroll();
     header_dropdown();
     activeMenu();
