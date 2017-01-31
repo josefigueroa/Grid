@@ -1,7 +1,7 @@
 init = function () {
     //headerFixed('#header');
     dropdownMenu('.header__nav__menuHeader__listItem__enlace');
-    slideMenu('#btn-menu');
+    //slideMenu('#btn-menu');
     scrollToTop('.scrollTop');
     activeMenu('.header__nav__menuHeader__listItem');
     acordeon('.acordeon-title', '.acordeon-paragraph');
@@ -160,5 +160,5 @@ llamadaAjax = function (element) {
 
 $(document).ready(function() {
     init();
-  
+
 });
