@@ -37,23 +37,28 @@ header = function () {
         });
     },
 
-    slideMenu = function (element) {
-        //abrir menu izquierda icono menu
-        $(element).on('click', function(event){
-        	var slideoutMenu = $('.enlaces'),
-                body = $('body');
+    header_slideMenu = function () {
 
+        var slideoutMenu = $('.enlaces'),
+            body = $('body'),
+            botonMenu = $('.nav-icon'),
+            overlay = $('.sideNav');
+        //abrir menu izquierda icono menu
+        $('#btn-menu').on('click', function(event){
         	slideoutMenu.toggleClass("open");
-            $('.sideNav').addClass('side-overlay');
-            //body.append('<div class="overlay"></div>');
-            $('.nav-icon').addClass('icon-active');
+            //bloquear body para no hacer scrool con menu abierto
+            overlay.addClass('side-overlay');
+            $('body').css('overflow', 'hidden');
+            //menu hamurguesa
+            botonMenu.addClass('icon-active');
         });
 
-        $('.sideNav').click(function () {
-            $('nav').find('.enlaces').removeClass('open');
-            $(this).removeClass('side-overlay');
-            //$('.overlay').remove();
-        	$('.nav-icon').removeClass('icon-active');
+        overlay.click(function () {
+            slideoutMenu.removeClass('open');
+            overlay.removeClass('side-overlay');
+            body.removeAttr('style');
+            //menu hamurguesa
+        	botonMenu.removeClass('icon-active');
         });
 
 
@@ -61,8 +66,8 @@ header = function () {
 
     header_scroll();
     header_dropdown();
+    header_slideMenu();
     activeMenu();
-    slideMenu('#btn-menu');
 }
 
 header();
