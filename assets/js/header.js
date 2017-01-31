@@ -41,10 +41,11 @@ header = function () {
 
         var slideoutMenu = $('.enlaces'),
             body = $('body'),
-            botonMenu = $('.nav-icon'),
+            botonMenu = $('.nav-icon, #btn-menu'),
             overlay = $('.sideNav');
+
         //abrir menu izquierda icono menu
-        $('#btn-menu').on('click', function(event){
+        botonMenu.on('click', function(event){
         	slideoutMenu.toggleClass("open");
             //bloquear body para no hacer scrool con menu abierto
             overlay.addClass('side-overlay');
@@ -60,14 +61,12 @@ header = function () {
             //menu hamurguesa
         	botonMenu.removeClass('icon-active');
         });
-
-
     },
 
     header_scroll();
     header_dropdown();
-    header_slideMenu();
     activeMenu();
+    header_slideMenu();
 }
 
 header();
